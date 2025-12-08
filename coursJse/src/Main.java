@@ -7,6 +7,8 @@ public class Main {
         System.out.println("hello there");
 
         Scanner sc = new Scanner(System.in);
+
+        //ex 1
         //System.out.print("Entrez un chiffre");
        // int numero = sc.nextInt();
 
@@ -16,6 +18,8 @@ public class Main {
       //  else {
            // System.out.println("Le numero est impaire!");
         //}
+       /*
+        //ex 2
         double sum=0;
         double moyenne=0;
         for(int i=1;i<4;i++){
@@ -25,11 +29,23 @@ public class Main {
         }
         moyenne=Math.round(sum/3);
         if(moyenne>=10){
-            System.out.println(moyenne + ": Admis");
+
+            System.out.println("la moyenne est : "+ moyenne + "\n Admis");
         }
         else{
             System.out.println(moyenne + ": non-admis");
-        }
+        }*/
+
+        //ex 3
+       /* System.out.print("Entrez un chiffre");
+         int numero = sc.nextInt();
+         int result = 0;
+         for(int i=1;i<=10;i++){
+             result=numero*i;
+             System.out.println(numero +"*"+ i + "=" + result);
+         }*/
+
+        
 
     }
 }
