@@ -1,7 +1,6 @@
-import Ex1.Enseignant;
-import Ex1.Specialite;
+import Ex2.Etudiant;
+import Ex2.Filiere;
 
-import javax.swing.*;
 import java.util.*;
 
 import static java.lang.Character.toLowerCase;
@@ -114,7 +113,7 @@ public class Main {
 
         System.out.println(p_one.show());*/
 
-        Specialite specialite_one = new Specialite("Java");
+        /*Specialite specialite_one = new Specialite("Java");
         Specialite specialite_two = new Specialite("JS");
         Specialite specialite_three = new Specialite("Gestion projet");
         Specialite specialite_four = new Specialite("PHP");
@@ -129,20 +128,62 @@ public class Main {
         List<Specialite> specialiteList=new ArrayList<>(Arrays.asList(specialite_one,specialite_two,specialite_three,specialite_four,specialite_five));
        boolean found;
 
-        List<Specialite> specialitesNotUsed = new ArrayList<>();
 
         for (Specialite specialite : specialiteList) {
+            System.out.println(specialite.getNom());
             found = false;
 
             for (Enseignant enseignant : enseignants) {
-                if (enseignant.getSpecialite().equals(specialite)) {
+                if (enseignant.getSpecialite().getNom().equals(specialite.getNom())) {
+                    System.out.println(enseignant.getNom() + " : " + specialite.getNom());
                     found = true;
                     break;
                 }
             }
             if (!found) {
-                System.out.println(specialite.getNom());
+                System.out.println(specialite.getNom() + " n'a pas d'enseignant");
+            }
+        }*/
+
+
+        Filiere cda=new Filiere("1","CDA");
+        Filiere marketing=new Filiere("2","Marketing");
+        Filiere ass_vie=new Filiere("3","Assistance de vie");
+
+        Etudiant et1=new Etudiant("Homer","Simpson",cda);
+        Etudiant et2=new Etudiant("Bart","Simpson",cda);
+        Etudiant et3=new Etudiant("Vanessa","Sultan",marketing);
+        Etudiant et4=new Etudiant("Marge","Simpson",marketing);
+        Etudiant et5=new Etudiant("Lisa","Simpson",marketing);
+
+        List<Filiere> filiereList=new ArrayList<>(Arrays.asList(cda,marketing,ass_vie));
+        List<Etudiant> etudiantList=new ArrayList<>(Arrays.asList(et1,et2,et3,et4,et5));
+
+        System.out.println("Liste des filieres");
+        boolean found;
+
+
+        for (Filiere fil : filiereList) {
+            System.out.println(fil.getLibelle());
+            found=false;
+            int i=1;
+
+            for (Etudiant etud : etudiantList) {
+
+                if (etud.getFiliere().equals(fil)) {
+
+                    System.out.println(" "+ i +"-" + etud.getNom() + " " + etud.getPrenom()+ "\n");
+
+                    found=true;
+                    i++;
+                }
+
+            }
+            if (!found) {
+                System.out.println("Filiere : " +fil.getLibelle() + " \n Pas d'inscrit");
             }
         }
+
+
     }
 }
