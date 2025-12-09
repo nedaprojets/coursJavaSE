@@ -1,10 +1,15 @@
-import java.util.Scanner;
+import Ex1.Enseignant;
+import Ex1.Specialite;
+
+import javax.swing.*;
+import java.util.*;
+
+import static java.lang.Character.toLowerCase;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        System.out.println("hello there");
 
         Scanner sc = new Scanner(System.in);
 
@@ -45,7 +50,99 @@ public class Main {
              System.out.println(numero +"*"+ i + "=" + result);
          }*/
 
-        
+        //ex 4
+        /* Random rand = new Random();
 
+        int goalNum = rand.nextInt(101); // entier entre 0 et 99
+
+
+
+        Do {
+        System.out.print("Entrez un chiffre entre 1 et 100");
+        int number = sc.nextInt();
+        }
+        while (goalNum != number) {
+            System.out.print("essayez encore  "+ goalNum);
+            number = sc.nextInt();
+                if(number < goalNum ) {
+                    System.out.println("Trop petit");
+                }
+                else if (number > goalNum ){
+                    System.out.println("Trop grand");
+                } else {
+                    System.out.println("tres bien ! le chiffre est " + number );
+                }
+            }*/
+
+            //ex 5
+       /* System.out.print("combien de nombre voulez vosu saisir ? ");
+        int number = sc.nextInt();
+        int i=1;
+        //int[] numbers = new int[number];
+        double sum=0;
+        double moyenne=0 ;
+        while(i<number+1){
+            System.out.print("entrez le chiffre " + i );
+            double entry=sc.nextDouble();
+            sum+=entry;
+            i++ ;
+        }
+        moyenne=sum/number;
+        System.out.println("Somme : "+ sum + " | Moyenne : "+moyenne); */
+
+        // exo 6 : compter les voyelles
+        /* int counter=0;
+        char[] vowels = {'a', 'e', 'i', 'o', 'u'};
+        System.out.print("Entrez une phrase ");
+        String sent = sc.nextLine();
+        char[] letters = sent.toLowerCase().toCharArray();
+
+       int lengthSent = sent.length();
+        for (char letter : letters) {
+            for (char vowel : vowels) {
+                if (letter == vowel) {
+                    counter++;
+                }
+            }
+
+        }
+        System.out.println(counter);*/
+
+
+      /* Personne p_one=new Personne("John","Dublin" , 5) ;
+
+
+        System.out.println(p_one.show());*/
+
+        Specialite specialite_one = new Specialite("Java");
+        Specialite specialite_two = new Specialite("JS");
+        Specialite specialite_three = new Specialite("Gestion projet");
+        Specialite specialite_four = new Specialite("PHP");
+        Specialite specialite_five = new Specialite("Html/CSS");
+
+        Enseignant enseignant_1=new Enseignant("Tom",specialite_one);
+        Enseignant enseignant_2=new Enseignant("John",specialite_two);
+        Enseignant enseignant_3=new Enseignant("James",specialite_three);
+        Enseignant enseignant_4=new Enseignant("Simon",specialite_four);
+
+        List<Enseignant> enseignants=new ArrayList<>(Arrays.asList(enseignant_1,enseignant_2,enseignant_3,enseignant_4));
+        List<Specialite> specialiteList=new ArrayList<>(Arrays.asList(specialite_one,specialite_two,specialite_three,specialite_four,specialite_five));
+       boolean found;
+
+        List<Specialite> specialitesNotUsed = new ArrayList<>();
+
+        for (Specialite specialite : specialiteList) {
+            found = false;
+
+            for (Enseignant enseignant : enseignants) {
+                if (enseignant.getSpecialite().equals(specialite)) {
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                System.out.println(specialite.getNom());
+            }
+        }
     }
 }
